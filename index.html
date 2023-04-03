@@ -34,6 +34,9 @@
       .container {
         padding: 70px 150px;
       }
+
+      /* Desktop navbar */
+
       .desktop-navbar {
         display: flex;
         flex-direction: row;
@@ -52,6 +55,53 @@
       .navbar-menu a:hover {
         color: hsl(35, 77%, 62%);
       }
+
+      /* Tablet / Mobile navbar */
+
+      .mobile-navbar{
+        display: none;
+        margin-bottom: 32px;
+      }
+
+      .mobile-navbar-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .mobile-navbar-body {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 0px; 
+        position: fixed; 
+        z-index: 1; 
+        top: 0; 
+        right: 0;
+        background-color: white; 
+        overflow-x: hidden; 
+        padding-top: 60px; 
+        transition: 0.5s; 
+      }
+
+      .mobile-navbar-body a {
+        margin: 20px;
+        color: hsl(240, 100%, 5%);
+        text-decoration: none;
+      }
+      .mobile-navbar-body a:hover {
+        color: hsl(35, 77%, 62%);
+      }
+      .navbar-burger{
+        cursor: pointer;
+      }
+      .navbar-burger-close{
+        cursor: pointer;
+        margin-right: 30px;
+        align-self: end;
+      }
+      /* Content */
+
       .content-section {
         display: flex;
         flex-direction: row;
@@ -131,7 +181,7 @@
       .content-top-card .card-body {
         margin-left: 20px;
       }
-      .card-image{
+      .card-image {
         max-height: 130px;
         width: auto;
       }
@@ -158,6 +208,16 @@
         font-size: 12px;
         color: hsl(236, 13%, 42%);
       }
+      @media screen and (max-width: 992px) {
+        .desktop-navbar {
+          display: none;
+        }
+        .mobile-navbar{
+          display: flex;
+          justify-content: space-between;
+          flex-direction: column;
+        }
+      }
     </style>
   </head>
   <body>
@@ -167,6 +227,26 @@
           <img src="./assets/images/logo.svg" alt="site-logo" />
         </div>
         <div class="navbar-menu">
+          <a href="#"> Home </a>
+          <a href="#"> New </a>
+          <a href="#"> Popular </a>
+          <a href="#"> Trending </a>
+          <a href="#"> Categories </a>
+        </div>
+      </div>
+      <div class="mobile-navbar">
+        <div class="mobile-navbar-head">
+          <div class="navbar-logo">
+            <img src="./assets/images/logo.svg" alt="site-logo" />
+          </div>
+          <div class="navbar-burger">
+            <img src="./assets/images/icon-menu.svg" alt="site-logo" />
+          </div>
+        </div>
+        <div class="mobile-navbar-body">
+          <div class="navbar-burger-close">
+            <img src="./assets/images/icon-menu-close.svg" alt="site-logo" />
+          </div>
           <a href="#"> Home </a>
           <a href="#"> New </a>
           <a href="#"> Popular </a>
@@ -270,5 +350,6 @@
         >Frontend Mentor</a
       >. Coded by <a href="#">Your Name Here</a>.
     </div>
+    <script src="./script.js"></script>
   </body>
 </html>
